@@ -1,0 +1,11 @@
+astroid==2.0.4
+isort==4.3.4
+lazy-object-proxy==1.3.1
+mccabe==0.6.1
+plumbum==1.6.7
+psutil==5.4.7
+pylint==2.1.1
+rpyc==4.0.2
+six==1.11.0
+typed-ast==1.1.0
+wrapt==1.10.11
