@@ -5,7 +5,7 @@ m1 = SshMachine("192.168.11.26")
 # m2 = SshMachine("192.168.11.32")
 m3 = SshMachine("192.168.11.35")
 
-dep = MultiServerDeployment([m1, m2, m3])
+dep = MultiServerDeployment([m1, m3])
 conn1, conn2, conn3 = dep.classic_connect_all()
 
 def check_process(conn, process):
