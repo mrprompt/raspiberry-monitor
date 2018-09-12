@@ -8,14 +8,16 @@ def check_process(conn, process):
     return len(stdout.split()) > 0
 
 servers = [
-    SshMachine("192.168.11.26"), 
-    SshMachine("192.168.11.35")
+    SshMachine("192.168.11.26"), # meteormon2 
+    SshMachine("192.168.11.32"), # vpn
+    SshMachine("192.168.11.35"), # meteormon1
 ]
 
 deployment = MultiServerDeployment(servers)
-conn1, conn2 = deployment.classic_connect_all()
+conn1, conn2, conn3 = deployment.classic_connect_all()
 
-print("Meteormon #1 running: ", check_process(conn1, "meteotux_pi"))
-print("Meteormon #2 running: ", check_process(conn1, "meteotux_pi"))
+print("Camera #1 running: ", check_process(conn3, "meteotux_pi"))
+print("Camera #2 running: ", check_process(conn1, "meteotux_pi"))
+print("VPN running: ", check_process(conn2, "openvpn"))
 
 deployment.close()
